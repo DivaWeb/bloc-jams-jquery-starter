@@ -7,4 +7,5 @@ $(document).ready(function(){
    $('.artist').text(album.artist);
    //release info
    $('#release-info').text(album.releaseInfo);
+   
 });
