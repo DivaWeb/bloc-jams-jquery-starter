@@ -8,7 +8,7 @@ $(document).ready(function(){
              <span class="ion-play"></span>
              <span class ="ion-pause"></span>
            </button>
-         </td>   
+         </td>
         <td>${song.title}</td>
         <td>${song.duration}</td>
       <tr>
@@ -16,6 +16,7 @@ $(document).ready(function(){
 
       song.element.click( event => {
         player.playPause(song);
+        $('button#play-pause').attr('playState', player.playState);
       });
     $('#song-list').append(song.element);
   });
