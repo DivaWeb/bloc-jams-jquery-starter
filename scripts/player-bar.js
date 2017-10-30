@@ -17,7 +17,11 @@ $(document).ready(function(){
     });
 
   $('button#previous').click(function(){
+<<<<<<< HEAD
     if(player.playState!== 'playing') {return;}
+=======
+    if(player.playState !== 'playing') {return;}
+>>>>>>> checkpoint13
 
      const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
      const previousSongIndex = currentSongIndex - 1;
