@@ -17,6 +17,8 @@ $(document).ready(function(){
     });
 
   $('button#previous').click(function(){
+    if(player.playState !== 'playing') {return;}
+
      const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
      const previousSongIndex = currentSongIndex - 1;
      if(previousSongIndex >= album.songs.length) {return;}
