@@ -17,19 +17,14 @@ $(document).ready(function(){
     });
 
   $('button#previous').click(function(){
-
     if(player.playState!== 'playing') {return;}
-
 
      const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
      const previousSongIndex = currentSongIndex - 1;
-     if(currentSongIndex < 1 ) {return;}
-
+     if(currentSongIndex < 1) {return;}
 
      const previousSong = album.songs[previousSongIndex];
      player.playPause(previousSong);
-
-
   });
 
   $('#time-control input').on('input', function (event){
@@ -46,10 +41,10 @@ $(document).ready(function(){
   }, 1000);
 
   $('#volume-control input').on('input', function(event){
-    player.setVolume(event.target.value);
-  });
+  player.setVolume(event.target.value);
+});
 
-  setInterval( () =>{
+setInterval( () =>{
     const currentTime = player.getTime();
     const duration = player.getDuration();
     const percent = (currentTime / duration) * 100;
@@ -57,4 +52,6 @@ $(document).ready(function(){
      $('#time-control input').val(percent);
 
   }, 1000);
+
+  
 });
