@@ -17,11 +17,9 @@ $(document).ready(function(){
     });
 
   $('button#previous').click(function(){
-<<<<<<< HEAD
+
     if(player.playState!== 'playing') {return;}
-=======
-    if(player.playState !== 'playing') {return;}
->>>>>>> checkpoint13
+
 
      const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
      const previousSongIndex = currentSongIndex - 1;
@@ -43,4 +41,17 @@ $(document).ready(function(){
     $('#time-control input').val(percent);
 
   }, 1000);
+
+  $('#volume-control input').on('input', function(event){
+    player.setVolume(event.target.value);
+  });
+
+  /*setInterval( () =>{
+    const currentTime = player.getTime();
+    const duration = player.getDuration();
+    const percent = (currentTime / duration) * 100;
+    $('#volume-control .current-time').text(currentTime);
+    $('#volume-control input').val(percent);
+
+  }, 1000);*/
 });
